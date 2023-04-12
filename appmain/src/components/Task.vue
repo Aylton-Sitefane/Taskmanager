@@ -1,7 +1,7 @@
 <template>
-    <div :class="[task.reminder ? 'reminder' : '', 'task']">
+    <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder' : '', 'task']">
         <h3>{{ task.text }}
-            <i @click="onDelete(task.id)" class="uil uil-trash"></i>
+            <i @click="$emit('delete-task',task.id)" class="uil uil-trash"></i>
         </h3>
         <h3>{{ task.dia }}</h3>
 
